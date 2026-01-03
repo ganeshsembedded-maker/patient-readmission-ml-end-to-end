@@ -22,7 +22,3 @@ It includes data preprocessing, model training, and evaluation.
 - Model trained successfully
 - Achieved reasonable accuracy for given dataset
 
-## 🚀 How to Run
-```bash
-pip install -r requirements.txt
-Open the notebook and run all cells.
