@@ -1,68 +1,135 @@
-🧠 Machine Learning End-to-End Project
-📌 Overview
-This project demonstrates a complete end-to-end Machine Learning workflow using Python.
-It covers data loading, preprocessing, feature encoding, model training, evaluation, and comparison on a real-world healthcare dataset to predict patient readmission.
+# 🤖 Patient Readmission Prediction  
+### End-to-End Machine Learning Project
 
-The project emphasizes practical ML pipeline design, handling categorical data, class imbalance, and evaluating models using F1-score.
+## 📌 Overview
+This project demonstrates a **complete end-to-end Machine Learning workflow** using Python.  
+The objective is to predict **patient readmission** using structured healthcare data by applying data preprocessing, feature encoding, model training, and evaluation techniques.
 
-🛠️ Technologies Used
-Python
-NumPy
-Pandas
-Matplotlib
-Seaborn
-scikit-learn
-XGBoost
-📊 Dataset
-Train Dataset: Contains patient medical records with readmission labels
-Test Dataset: Similar structure without target variable
-Dataset includes:
-Demographics (age, gender, race)
-Hospital stay details
-Medical procedures & diagnoses
-Medication-related features
-🔄 Machine Learning Workflow
-1️⃣ Data Loading & Exploration
-Loaded train and test datasets using Pandas
-Inspected shape, data types, and missing values
-Performed exploratory data analysis (EDA) using bar plots
-2️⃣ Data Preprocessing
-Dropped unnecessary columns (X1, X2, weight)
-Checked and handled missing values
-Identified categorical (object) features
-3️⃣ Feature Encoding
-Applied Label Encoding
-Ensured consistent encoding across train and test datasets
-4️⃣ Train–Validation Split
-Split data into 80% training and 20% validation
-Used stratified sampling to handle class imbalance
-🤖 Models Implemented
-🔹 Logistic Regression
-Baseline classification model
-F1 Score: 42.74%
-🔹 Random Forest Classifier
-Ensemble-based model
-Handled non-linear relationships effectively
-F1 Score: 76.50%
-🔹 XGBoost Classifier
-Gradient boosting model
-Tuned with depth, learning rate, and class weight
-F1 Score: 71.87%
-📈 Model Performance Comparison
-Model	F1 Score (%)
-Logistic Regression	42.74
-Random Forest	76.50
-XGBoost	71.87
-✅ Random Forest achieved the best performance on the validation set.
+The project follows **real-world ML pipeline practices** commonly used in industry-level applications.
 
-📉 Confusion Matrix
-Visualized confusion matrix for XGBoost
-Helps understand false positives and false negatives
-Used Seaborn heatmap for clarity
-🧪 Evaluation Metric
-F1 Score was used due to class imbalance
-Provides a balance between precision and recall
-🚀 How to Run the Project
-Clone the repository
-git clone https://github.com/ganeshsembedded-maker/ml-end-to-end-project.git
+---
 
+## 🛠️ Technologies Used
+- **Python**
+- **NumPy**
+- **Pandas**
+- **Matplotlib**
+- **Seaborn**
+- **scikit-learn**
+- **XGBoost**
+
+---
+
+## 📊 Dataset
+- **Training Dataset:** 66,587 records × 49 features  
+- **Test Dataset:** 48 features  
+- **Target Variable:** `readmitted` (Binary Classification)
+
+The dataset includes:
+- Patient demographic information  
+- Hospital stay details  
+- Lab procedures and medication data  
+- Diagnostic and treatment indicators  
+
+---
+
+## 🔄 Machine Learning Workflow
+
+### 1️⃣ Data Loading & Exploration
+- Loaded training and test datasets using Pandas  
+- Inspected dataset structure, data types, and missing values  
+- Verified dataset size and feature distributions  
+
+---
+
+### 2️⃣ Exploratory Data Analysis (EDA)
+Performed visual analysis to understand the impact of features on patient readmission:
+- **Time in hospital vs readmission**
+- **Number of medications vs readmission**
+- **Lab procedures and age impact**
+
+📊 Visualizations created using **Seaborn** and **Matplotlib**.
+
+---
+
+### 3️⃣ Data Preprocessing
+- Removed unnecessary and highly missing columns  
+- Identified **36 categorical features**  
+- Applied **Label Encoding** consistently to both training and test datasets  
+- Prevented data leakage by fitting encoders on combined data  
+
+---
+
+### 4️⃣ Feature Engineering
+- Separated features (`X`) and target (`y`)  
+- Performed **80:20 train–validation split**  
+- Used **stratified sampling** to handle class imbalance  
+
+---
+
+### 5️⃣ Model Training
+Trained and evaluated multiple classification models:
+
+#### 🔹 Logistic Regression
+- Used as a baseline model  
+- Increased max iterations to ensure convergence  
+
+#### 🔹 Random Forest Classifier
+- 300 estimators  
+- Balanced class weights  
+- Strong performance on non-linear patterns  
+
+#### 🔹 XGBoost Classifier
+- Gradient-boosted decision trees  
+- Tuned hyperparameters for better generalization  
+
+---
+
+## 📈 Model Performance (F1 Score)
+
+| Model               | F1 Score (%) |
+|--------------------|-------------|
+| Logistic Regression | 42.74 |
+| Random Forest       | **76.50** |
+| XGBoost             | 71.87 |
+
+✅ **Random Forest achieved the best performance**
+
+---
+
+## 🧮 Confusion Matrix
+- Evaluated predictions using a **confusion matrix**  
+- Visualized results with a heatmap  
+- Analyzed false positives and false negatives  
+
+---
+
+## 📌 Key Learnings
+- Importance of **proper categorical encoding**
+- Handling **class imbalance** effectively
+- Strength of **tree-based ensemble models**
+- End-to-end ML pipeline implementation
+- Using **F1-score** instead of accuracy for imbalanced data  
+
+---
+
+## 🚀 Future Improvements
+- Hyperparameter tuning using GridSearch / RandomSearch  
+- Feature selection techniques  
+- Advanced imbalance handling (SMOTE, class weighting)  
+- Model deployment using **Flask / FastAPI**  
+- Cloud deployment using **AWS**  
+
+---
+
+## ▶️ Open in Google Colab
+This project can be executed directly in **Google Colab** for easy experimentation.
+
+---
+
+## 📂 Repository Link
+🔗 https://github.com/ganeshsembedded-maker/ml-end-to-end-project
+
+---
+
+⭐ If you find this project useful, feel free to **star ⭐ the repository**!
